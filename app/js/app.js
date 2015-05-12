@@ -13,7 +13,6 @@ $(document).ready(function() {
 		$('<div class="card genericcard">' + i + '</div>').appendTo('body');
 	}
 	$('.genericcard').each(function() {
-		debugger;
 		var rNum = Math.random()*180;
 		var xScatter = Math.random()* bodyWidth;
 		var yScatter = Math.random() * bodyHeight;

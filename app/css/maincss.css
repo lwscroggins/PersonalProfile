@@ -1,8 +1,9 @@
 /* Generic setup */
 body {
-	width: 100%;
 	height: 100%;
 	min-height: 800px;
+	max-width: 1920px;
+	overflow-x: hidden;
 }
 
 /* home screen */
