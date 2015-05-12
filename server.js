@@ -11,7 +11,7 @@ var app = express();
 
 app.use(express.static(__dirname + (process.env.STATIC_DIR || '/build')));
 app.get('/', function(request, response) {
-	response.sendFile('./views/index.html', {'root': __dirname});
+	response.sendFile('./app/views/index.html', {'root': __dirname});
 });
 
 // app.set('jwttokensecret', process.env.JWT_SECRET || 'developmentsecret');

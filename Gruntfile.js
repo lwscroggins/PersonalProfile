@@ -4,14 +4,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('grunt-mocha');
-  grunt.loadNpmTasks('grunt-simple-mocha');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-express-server');
-  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-bower-install');
 
   grunt.initConfig({
     clean: {
@@ -36,14 +33,8 @@ module.exports = function(grunt) {
           transform: ['debowerify'],
           debug: true
         },
-        src: ['app/js/**/*.js'],
+        src: ['app/js/*.js'],
         dest: 'build/bundle.js'
-      },
-
-      simplemocha: {
-        server: {
-          src: ['test/mocha/api/**/*.js']
-        }
       }
     },
 
@@ -82,23 +73,6 @@ module.exports = function(grunt) {
         }
     },
 
-    // sass: {
-    //   dist: {
-    //     options: {
-    //       style: 'compressed'
-    //     },
-    //     files: {
-    //       'app/css/core.css': 'app/sass/core.scss'
-    //     }
-    //   }
-    // },
-
-    karma: {
-      unit: {
-        configFile: 'karma.conf.js'
-      }
-    },
-
     express: {
       dev: {
         options: {
@@ -108,10 +82,24 @@ module.exports = function(grunt) {
       }
     },
 
+    bowerInstall: {
+		target: {
+			src: [
+				'app/views/*.html'
+			],
+			cwd: '',
+			dependencies: true,
+			devDependencies: false,
+			exclude: [],
+			ignorePath: '',
+			overrides: {}
+		}
+    },
+
     watch: {
       express: {
-        files: ['app/js/**/*.js', 'app/index.html', 'app/views/**/*.html', 'server.js', 'models/*.js', 'routes/*.js'],
-        tasks: ['buildtest', 'express:dev'],
+        files: ['app/js/**/*.js', 'index.html', 'app/views/**/*.html', 'server.js', 'app/css/*.css'],
+        tasks: ['clean:dev', 'browserify:dev', 'copy:dev', 'express:dev'],
         options: {
           spawn: false
         }
@@ -126,7 +114,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build:dev', ['clean:dev', 'browserify:dev', 'copy:dev', 'concurrent']); //include sass later if you want to use it
-  grunt.registerTask('buildtest', ['test', 'build:dev']);
+  grunt.registerTask('build:dev', ['clean:dev','browserify:dev', 'copy:dev', 'concurrent']);
   grunt.registerTask('default', ['test', 'watch:express', 'concurrent']);
 };

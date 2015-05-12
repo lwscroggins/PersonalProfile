@@ -1,0 +1,13 @@
+/* home screen */
+.card {
+	height: 320px;
+	width: 240px;
+}
+
+.infocard {
+	background: blue;
+}
+
+.genericcard {
+	background: green;
+}
