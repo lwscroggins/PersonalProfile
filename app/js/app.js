@@ -9,8 +9,8 @@ $(document).ready(function() {
 	var bodyWidth = $(window).width();
 	// $('#cardfan').css('margin-left', (bodyWidth/2.75) + 'px');
 	$('#cardfan').css('margin-top', (bodyHeight/4) + 'px');
-	for(var i = 0; i < 30; i++) {
-		$('<div class="card genericcard">' + i + '</div>').appendTo('#overlay');
+	for(var i = 0; i < 10; i++) {
+		$('<div class="card genericcard"><div class="cardoverlay"</div></div>').appendTo('#content');
 	}
 	$('.genericcard').each(function() {
 		var rNum = Math.random()*359;
@@ -22,7 +22,8 @@ $(document).ready(function() {
 			"-moz-transform": "rotate("+rNum+"2deg)",
 			"top": yScatter + 'px',
 			"left": xScatter + 'px',
-			"background": 'url(/img/' + bgImage + ') no-repeat'
+			"background": 'url(/img/' + bgImage + ') no-repeat',
+			"background-size": "cover"
 		});
 	});
 });
