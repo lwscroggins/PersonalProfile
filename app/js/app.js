@@ -23,4 +23,5 @@ $(document).ready(function() {
 			"left": xScatter + 'px'
 		});
 	});
+	console.log('force it');
 });
