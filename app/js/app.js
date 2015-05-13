@@ -7,8 +7,8 @@ console.log('hello world');
 $(document).ready(function() {
 	var bodyHeight = $(window).height();
 	var bodyWidth = $(window).width();
-	$('#cardfan').css('margin-left', (bodyWidth/3) + 'px');
-	$('#cardfan').css('top', (bodyHeight/5) + 'px');
+	// $('#cardfan').css('margin-left', (bodyWidth/2.75) + 'px');
+	$('#cardfan').css('margin-top', (bodyHeight/4) + 'px');
 	for(var i = 0; i < 30; i++) {
 		$('<div class="card genericcard">' + i + '</div>').appendTo('body');
 	}
