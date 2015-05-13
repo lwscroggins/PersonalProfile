@@ -13,15 +13,15 @@ $(document).ready(function() {
 		$('<div class="card genericcard">' + i + '</div>').appendTo('body');
 	}
 	$('.genericcard').each(function() {
-		var rNum = Math.random()*180;
+		var rNum = Math.random()*359;
 		var xScatter = Math.random()* bodyWidth;
 		var yScatter = Math.random() * bodyHeight;
+		var bgImage = (Math.floor(Math.random() * 69) + 1) + '.jpg';
 		$(this).css( {
 			"-webkit-transform": "rotate("+rNum+"2deg)",
 			"-moz-transform": "rotate("+rNum+"2deg)",
 			"top": yScatter + 'px',
-			"left": xScatter + 'px'
+			"left": xScatter + 'px',
 		});
 	});
-	console.log('force it');
 });

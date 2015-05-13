@@ -23,6 +23,7 @@ body {
 	position: absolute;
 	background: green;
 	right: 200px;
+	background-size: contain;
 }
 
 #cardfan {
