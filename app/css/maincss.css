@@ -113,7 +113,7 @@ body {
 
 .navcard {
 	position: absolute;
-	opacity: 1;
+	opacity: 0;
 	padding: 5px;
 	background: blue;
 	color: white;

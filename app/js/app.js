@@ -1,17 +1,18 @@
 'use strict'
 //app.js
 var $ = require('jquery');
-console.log('hello world');
 
 //home page
 $(document).ready(function() {
+	//set up body
 	var bodyHeight = $(window).height();
 	var bodyWidth = $(window).width();
-	// $('#cardfan').css('margin-left', (bodyWidth/2.75) + 'px');
+	//create x number of random cards generic cards and put in body
 	$('#cardfan').css('margin-top', (bodyHeight/4) + 'px');
 	for(var i = 0; i < 10; i++) {
 		$('<div class="card genericcard"><div class="cardoverlay"</div></div>').appendTo('#content');
 	}
+	//randomly scatter generic cards around the page and provide backgrounds
 	$('.genericcard').each(function() {
 		var rNum = Math.random()*359;
 		var xScatter = Math.random()* bodyWidth;
