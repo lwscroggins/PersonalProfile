@@ -35,4 +35,16 @@ $(document).ready(function() {
 			"background-size": "cover"
 		});
 	});
+	//control infocard click behavior
+	$('.infocard').click(function() {
+		var findid = $(this).attr('id') + 'page';
+		$(this).closest('.page').addClass('hide');
+		$(this).closest('#content').find('#' + findid).removeClass('hide');
+		$(this).closest('#content').find('#navbar').removeClass('hide');
+	});
+	//back to home
+	$('#navhome').click(function() {
+		$('#homepage').removeClass('hide');
+		$('#navbar, .contentpage').addClass('hide');
+	});
 });
