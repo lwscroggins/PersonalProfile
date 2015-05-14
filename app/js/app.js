@@ -7,6 +7,14 @@ $(document).ready(function() {
 	//set up body
 	var bodyHeight = $(window).height();
 	var bodyWidth = $(window).width();
+	$('body').css({
+		"height": bodyHeight + 'px',
+		"width": bodyWidth + 'px'
+	});
+	$('#content').css({
+		"height": bodyHeight + 'px',
+		"width": bodyWidth + 'px'
+	});
 	//create x number of random cards generic cards and put in body
 	$('#cardfan').css('margin-top', (bodyHeight/4) + 'px');
 	for(var i = 0; i < 10; i++) {
