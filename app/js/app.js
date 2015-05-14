@@ -17,7 +17,7 @@ $(document).ready(function() {
 		var rNum = Math.random()*359;
 		var xScatter = Math.random()* bodyWidth;
 		var yScatter = Math.random() * bodyHeight;
-		var bgImage = (Math.floor(Math.random() * 9) + 1) + '.jpg';
+		var bgImage = (Math.floor(Math.random() * 21) + 1) + '.jpg';
 		$(this).css( {
 			"-webkit-transform": "rotate("+rNum+"2deg)",
 			"-moz-transform": "rotate("+rNum+"2deg)",
