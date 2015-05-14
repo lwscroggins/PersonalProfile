@@ -6,6 +6,7 @@ var express = require('express');
 var http = require('http');
 // var passport = require('passport');
 var app = express();
+app.set('view engine', 'vash');
 
 // mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/GolfScorecard');
 

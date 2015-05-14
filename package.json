@@ -10,7 +10,8 @@
   "author": "Larry Scroggins",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "vash": "^0.8.4"
   },
   "devDependencies": {
     "debowerify": "^1.2.1",

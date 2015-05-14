@@ -30,7 +30,22 @@ $(document).ready(function() {
 	});
 });
 
-},{"./..\\..\\bower_components\\jquery\\dist\\jquery.js":2}],2:[function(require,module,exports){
+},{"./..\\..\\bower_components\\jquery\\dist\\jquery.js":3}],2:[function(require,module,exports){
+// module.exports = function (app, config) {
+
+//     app.all('/status', function (req, res) {
+//         res.status(200).end();
+//     });
+
+//     var routehome = require(config.root + '/server/route-home');
+//     app.all('/', routehome.processRequest);
+
+//     var routesearch = require(config.root + '/server/route-search');
+//     app.all('/search/:query', routesearch.processRequest);
+//     app.all('/search/:query/:page', routesearch.processRequest);
+
+// };
+},{}],3:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -9242,4 +9257,4 @@ return jQuery;
 
 }));
 
-},{}]},{},[1]);
+},{}]},{},[1,2]);
