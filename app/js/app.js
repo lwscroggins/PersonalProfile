@@ -37,10 +37,19 @@ $(document).ready(function() {
 	});
 	//control infocard click behavior
 	$('.infocard').click(function() {
-		var findid = $(this).attr('id') + 'page';
-		$(this).closest('.page').addClass('hide');
-		$(this).closest('#content').find('#' + findid).removeClass('hide');
-		$(this).closest('#content').find('#navbar').removeClass('hide');
+		debugger;
+		var $this = $(this);
+		var findid = $this.attr('id') + 'page';
+		var transDeg = $this.css('transform');
+		var cardHeight = $this.css('height');
+		var cardWidth = $this.css('width');
+		$this.css({"transform": "rotate(0deg)", "z-index": "98"}).animate({"top": "-100px"}, 600).animate({"height": "2000px", "width": "1500px", "left": "-100%", "top": "-100%"}, 600);
+		setTimeout(function() {
+			$this.closest('.page').addClass('hide');
+			$this.closest('#content').find('#' + findid).removeClass('hide');
+			$this.closest('#content').find('#navbar').removeClass('hide');
+			$this.removeAttr('style');
+		}, 1300);
 	});
 	//back to home
 	$('#navhome').click(function() {
