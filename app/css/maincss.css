@@ -5,7 +5,6 @@ html, body {
 }
 
 body {
-	height: 100%;
 	margin: 0 auto;
 	overflow-x: hidden;
 	background: url(/img/table.jpg);
@@ -49,7 +48,7 @@ body {
 	height: 60%;
 	z-index: 100;
 	margin-left: 40%;
-	margin-top: 30%;
+	margin-top: 10%;
 }
 
 #cardstack {
@@ -142,6 +141,7 @@ body {
 	height: 10%;
 	background: green;
 	z-index: 99;
+	opacity: 0;
 }
 
 #navhome {
@@ -150,18 +150,19 @@ body {
 
 .contentpage {
 	position: absolute;
-	width: 80%;
-	height: 100%;
+	width: 0;
+	height: 0;
 	z-index: 99;
 	margin: 0 auto;
 	left: 0;
 	right: 0;
 	top: 20%;
-	box-shadow: 0px 0px 40px 15px #BDBDBD;
+	box-shadow: 0px 0px 40px 15px white;
+	color: white;
 }
 
 .contentbg {
-	background: white;
+	background: black;
 	opacity: .8;
 	position: absolute;
 	height: 100%;
@@ -178,10 +179,15 @@ body {
 }
 
 /* About */
+#aboutpage {
+	opacity: 0;
+}
+
 #aboutpic1, #aboutpic2, #aboutsection {
 	box-shadow: 0px 0px 0px 1px #bdbdbd;
 	position: absolute;
 }
+
 #aboutpic1, #aboutpic2 {
 	width: 35%;
 	height: 50%;
@@ -204,3 +210,32 @@ body {
 	width: 65%;
 }
 
+/* Resume */
+#resumepage {
+	opacity: 0;
+}
+
+/* History */
+#historypage {
+	opacity: 0;
+}
+
+/* Blog */
+#blogpage {
+	opacity: 0;
+}
+
+/* Homes */
+#homespage {
+	opacity: 0;
+}
+
+/* Fun and Games */
+#funandgamespage {
+	opacity: 0;
+}
+
+/* Destinations */
+#destinationspage {
+	opacity: 0;
+}

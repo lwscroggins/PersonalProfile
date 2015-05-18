@@ -13,10 +13,10 @@ $(document).ready(function() {
 	});
 	$('#content').css({
 		"height": bodyHeight + 'px',
-		"width": bodyWidth + 'px'
+		"width": bodyWidth + 'px',
 	});
 	//create x number of random cards generic cards and put in body
-	$('#cardfan').css('margin-top', (bodyHeight/4) + 'px');
+	// $('#cardfan').css('margin-top', (bodyHeight/4) + 'px');
 	for(var i = 0; i < 10; i++) {
 		$('<div class="card genericcard"><div class="cardoverlay"</div></div>').appendTo('#content');
 	}
@@ -37,23 +37,30 @@ $(document).ready(function() {
 	});
 	//control infocard click behavior
 	$('.infocard').click(function() {
-		debugger;
 		var $this = $(this);
 		var findid = $this.attr('id') + 'page';
 		var transDeg = $this.css('transform');
 		var cardHeight = $this.css('height');
 		var cardWidth = $this.css('width');
-		$this.css({"transform": "rotate(0deg)", "z-index": "98"}).animate({"top": "-100px"}, 600).animate({"height": "2000px", "width": "1500px", "left": "-100%", "top": "-100%"}, 600);
+		$this.css({"transform": "rotate(0deg)", "z-index": "98"}).animate({"top": "-100px"}, 600).animate({"height": "2000px", "width": "1500px", "left": "-100%", "top": "-100%", "opacity": "0"}, 600);
 		setTimeout(function() {
 			$this.closest('.page').addClass('hide');
-			$this.closest('#content').find('#' + findid).removeClass('hide');
-			$this.closest('#content').find('#navbar').removeClass('hide');
+			$this.closest('#content').find('#' + findid).animate({
+				"opacity": "1",
+				"width": "80%",
+				"height": "80%"
+			}, 900);
+			$this.closest('#content').find('#navbar').animate({
+				"opacity": "1"
+			}, 600);
+		}, 1000);
+		setTimeout(function() {
 			$this.removeAttr('style');
 		}, 1300);
 	});
 	//back to home
 	$('#navhome').click(function() {
 		$('#homepage').removeClass('hide');
-		$('#navbar, .contentpage').addClass('hide');
+		$('#navbar, .contentpage').removeAttr('style');
 	});
 });
